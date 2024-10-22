@@ -1,24 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { useState } from "react";
 
 function App() {
+  // const [firstname, setfirstname] = useState("Jatin thakur");
+  const [data, setdata] = useState(0);
+  function increase(e) {
+    // console.log("You Clicked me");
+    // console.log(e.target.textContent);
+    // e.target.textContent = "You Clicked me";
+    // if (firstname === "Jatin thakur") {
+    //   setfirstname("jatinnnn");
+    // } else {
+    //   setfirstname("Jatin thakur");
+    // }
+    setdata(data + 1);
+  }
+
+  function reset() {
+    setdata(0);
+  }
+  function decrease() {
+    setdata(data - 1);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>{data}</h1>
+
+      <button onClick={increase}> increase</button>
+      <button onClick={reset}> reset</button>
+      <button onClick={decrease}> decrease</button>
+
+      <h2>nice guys</h2>
+    </>
   );
 }
 
